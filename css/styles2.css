@@ -1,0 +1,282 @@
+/* CSS Reset */
+body, header, nav, main, footer, h1, div, img, ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Style rules for body and images */
+body {
+    background-color: #ffbcd9;
+    margin: 0;
+}
+ 
+img {
+    border-radius: 10px;
+}
+
+/* Box sizing for all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* Header - Uses your specified Dark Purple color */
+header {
+    background-color: #4d0026; 
+    width: 100%;
+    text-align: center;
+    padding: 1em 0;
+    z-index: 1000;
+}
+
+header h1 {
+    color: #fff;
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Navigation - Uses your specified Dark Purple color */
+nav {
+    background-color: #4d0026; 
+    width: 100%;
+    text-align: center;
+    padding: 0; 
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* --- Removed 'Style rules for hamburger menu' and 'Show mobile class, hide tablet-desktop class and menu-links id' sections --- */
+/* The commented-out sections for .mobile-nav, .mobile, .tablet-desktop, and #menu-links have been removed. */
+
+/* Social Class for social media content */
+.social {
+    float: right;
+    width: 40%;
+}
+
+.social img {
+    display: block;
+}
+
+/* Mobile: Stacked Vertical Links (Default View) - FIXED FOR IMAGE APPEARANCE */
+nav li {
+    /* CRITICAL: Ensures vertical stacking for mobile */
+    display: block; 
+    font-family: 'Francois One', sans-serif;
+    /* White separator line */
+    border-bottom: 2px solid #ffffff; 
+    border-top: none; 
+    margin: 0;
+}
+
+nav li:first-child {
+    border-top: none; 
+}
+
+nav li:last-child {
+    border-bottom: none; /* Removes the border from the very last item */
+}
+
+nav li a {
+    display: block; 
+    /* Tall button height */
+    padding: 1em 0; 
+    text-decoration: none;
+    /* White text color */
+    color: #ffffff; 
+    /* Dark Purple background color for the link block */
+    background-color: #4d0026; 
+    /* Large, bold font */
+    font-size: 1.5em; 
+    font-weight: bold; 
+}
+
+/* --- Added rule to remove any '>' symbol from navigation links (pseudo-element content) --- */
+nav li a::after {
+    content: none !important; /* Explicitly remove any content, including a '>' */
+}
+/* ---------------------------------------------------------------------------------------- */
+
+nav li a:hover {
+    text-decoration: none; 
+    color: #ffffff;
+    background-color: #4d0026; 
+}
+
+/* Tablet & Desktop: horizontal links with right borders - ADJUSTED BREAKPOINT */
+@media screen and (min-width: 900px) { /* Changed from 630px to 900px */
+
+    nav li {
+        display: inline-block;  /* Horizontal links for larger screens */
+        border-top: none;        
+        border-bottom: none;    /* Remove mobile bottom border */
+        /* Optional: Add a right border between horizontal links */
+        border-right: 1px solid #ffbcd9; 
+    }
+
+    nav li:last-child {
+        border-right: none;
+    }
+
+    nav li a {
+        padding: 0.4em 1em; 
+        color: #ffbcd9; /* Accent color text */
+        background-color: #4d0026; 
+        font-size: 1.2em; 
+        font-weight: normal; 
+    }
+	
+	/* Tablet Viewport: Style rules for table */
+	table {
+		border: 1px solid #4d0026;
+		border-collapse: collapse;
+		margin: 0 auto;
+		width: 100%;
+	}
+	
+	caption {
+		font-size: 1.5em;
+		font-weight: bold;
+		padding: 1%;
+	}
+	
+	th, td {
+		border: 1px solid #000;
+		padding: 2%;
+	}
+	
+	th {
+		background-color: #4d0026;
+		color: #ffbcd9;
+		font-size: 1.15em;
+	}
+	
+	/*tr:nth-child(odd) {
+		background-color: #4d0026;
+	}*/
+}
+
+@media screen and (min-width: 1921px) {
+    
+    #container {
+        width: 1920px;
+        margin: 0 auto;
+    }
+	
+	table {
+		width: 80%;
+	}
+}
+
+/* Main content */
+main {
+    text-align: center;
+    max-width: 900px;
+    margin: 2em auto;
+}
+
+main img {
+    display: inline-block;
+    margin-right: 10px;
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+}
+
+/* LinkedIn important Info Images Size Alteration */
+#info {
+    width: 600px;
+    height: 200px;
+}
+
+#img {
+    width: 150px;
+    height: 200px;
+}
+
+#img2 {
+    width: 600px;
+    height: 220px;
+}
+
+#hero-image {
+	width: 500px;
+	height: 120px;
+}
+
+.certify {
+	/* The container is now a flexbox */
+	display: flex;
+	
+	/* Vertically centers the items */
+	align-items: center; 
+	
+	/* Distributes space equally around the items */
+	justify-content: space-evenly;
+	
+	gap: 100px;
+}
+
+.certify img {
+	/* Set a maximum width for each image */
+	max-width: 200px; 
+	max-height: 200px;
+	
+	/* Allows the images to shrink but prevents them from growing */
+	flex: 0 1 auto; 
+	
+	/* Ensures images display correctly if using fixed dimensions */
+	width: 100%; 
+}
+
+.certify p {
+	flex: 1;
+}
+
+/* Ensure all images are block-level and centered */
+img, video {
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.map img{
+	width: 500px;
+	height: 100px;
+	border: 2px solid #000;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 2em;
+}
+
+/* Print styles (Commented out)
+@media print {
+    body {
+        background-color: #ffbcd9;
+        color: #000;
+    }
+}
+*/
+
+/* Style rules for footer content */
+
+footer .copyright {
+    background-color: #4d0026;
+    text-align: center;
+    color: #fff;
+    padding: 1% 2%;
+    margin-top: 2em;
+}
+
+footer p a {
+    color: #4d0026;
+    text-decoration: none;
+}
